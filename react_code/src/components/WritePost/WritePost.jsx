@@ -24,7 +24,7 @@ const WritePost = () => {
 		}
 
 		// 서버로 데이터 전송
-		fetch("http://3.35.208.38:8000/blogs/", {
+		fetch("http://IP_ADDRESS:8000/blogs/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

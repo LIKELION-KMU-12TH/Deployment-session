@@ -8,7 +8,7 @@ const PostDetail = () => {
 
 	const getPost = async () => {
 		try {
-			const response = await axios.get(`http://3.35.208.38:8000/blogs/${id}/`);
+			const response = await axios.get(`http://IP_ADDRESS:8000/blogs/${id}/`);
 			setPost(response.data);
 		} catch (error) {
 			console.error(error);
@@ -22,7 +22,7 @@ const PostDetail = () => {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete(`http://3.35.208.38:8000/blogs/${id}/`);
+			await axios.delete(`http://IP_ADDRESS:8000/blogs/${id}/`);
 			alert("글 삭제가 완료되었습니다.");
 			window.location.href = "/";
 		} catch (error) {

@@ -12,7 +12,7 @@ const EditPost = () => {
 
 	const getPost = async () => {
 		try {
-			const response = await axios.get(`http://3.35.208.38:8000/blogs/${id}/`);
+			const response = await axios.get(`http://IP_ADDRESS:8000/blogs/${id}/`);
 			const post = response.data;
 			setTitle(post.title);
 			setContent(post.content);
@@ -41,7 +41,7 @@ const EditPost = () => {
 			alert("제목은 100자 이내로 작성해주세요.");
 			return;
 		}
-		fetch(`http://3.35.208.38:8000/blogs/${id}/`, {
+		fetch(`http://IP_ADDRESS:8000/blogs/${id}/`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

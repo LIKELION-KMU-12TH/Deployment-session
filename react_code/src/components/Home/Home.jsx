@@ -6,7 +6,7 @@ const Home = () => {
 	const [posts, setPosts] = useState([]);
 
 	const getPosts = async () => {
-		const response = await axios.get("http://3.35.208.38:8000/blogs/");
+		const response = await axios.get("http://IP_ADDRESS:8000/blogs/");
 		setPosts(response.data);
 	};
 
