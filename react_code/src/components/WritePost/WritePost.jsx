@@ -6,6 +6,7 @@ const WritePost = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const navigate = useNavigate();
+	const IP_ADDRESS = process.env.REACT_APP_IP_ADDRESS;
 
 	const handleContentChange = (e) => {
 		setContent(e.target.value);
@@ -24,7 +25,7 @@ const WritePost = () => {
 		}
 
 		// 서버로 데이터 전송
-		fetch("http://IP_ADDRESS:8000/blogs/", {
+		fetch(`http://${IP_ADDRESS}:8000/blogs/`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

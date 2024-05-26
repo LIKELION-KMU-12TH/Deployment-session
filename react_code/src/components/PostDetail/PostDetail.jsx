@@ -5,10 +5,11 @@ import { useParams } from "react-router-dom";
 const PostDetail = () => {
 	const { id } = useParams();
 	const [post, setPost] = useState({});
+	const IP_ADDRESS = process.env.REACT_APP_IP_ADDRESS;
 
 	const getPost = async () => {
 		try {
-			const response = await axios.get(`http://IP_ADDRESS:8000/blogs/${id}/`);
+			const response = await axios.get(`http://${IP_ADDRESS}:8000/blogs/${id}/`);
 			setPost(response.data);
 		} catch (error) {
 			console.error(error);
@@ -22,7 +23,7 @@ const PostDetail = () => {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete(`http://IP_ADDRESS:8000/blogs/${id}/`);
+			await axios.delete(`http://${IP_ADDRESS}:8000/blogs/${id}/`);
 			alert("글 삭제가 완료되었습니다.");
 			window.location.href = "/";
 		} catch (error) {
