@@ -4,9 +4,9 @@ import Card from "../Card/Card";
 
 const Home = () => {
 	const [posts, setPosts] = useState([]);
-	const IP_ADDRESS = process.env.REACT_APP_IP_ADDRESS;
+	const URL = process.env.REACT_APP_URL;
 	const getPosts = async () => {
-		const response = await axios.get(`http://${IP_ADDRESS}:8000/blogs/`);
+		const response = await axios.get(`http://${URL}/blogs/`);
 		setPosts(response.data);
 	};
 

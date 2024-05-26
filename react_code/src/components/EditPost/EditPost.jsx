@@ -9,11 +9,11 @@ const EditPost = () => {
 	const navigate = useNavigate();
 
 	const { id } = useParams();
-	const IP_ADDRESS = process.env.REACT_APP_IP_ADDRESS;
+	const URL = process.env.REACT_APP_URL;
 
 	const getPost = async () => {
 		try {
-			const response = await axios.get(`http://${IP_ADDRESS}:8000/blogs/${id}/`);
+			const response = await axios.get(`http://${URL}/blogs/${id}/`);
 			const post = response.data;
 			setTitle(post.title);
 			setContent(post.content);
@@ -42,7 +42,7 @@ const EditPost = () => {
 			alert("제목은 100자 이내로 작성해주세요.");
 			return;
 		}
-		fetch(`http://${IP_ADDRESS}:8000/blogs/${id}/`, {
+		fetch(`http://${URL}/blogs/${id}/`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
